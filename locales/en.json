@@ -1,0 +1,260 @@
+{
+  "submit-application": "Start a project",
+  "submit-success": "Application sent",
+  "about": "About us",
+  "services": "Services",
+  "our-work": "Cases",
+  "cost-calculation": "Calculate the cost",
+  "contacts": "Contacts",
+  "title-main": "We make turnkey sites",
+  "title-main--1": "We make turnkey",
+  "title-main--2": "development",
+  "hero-desс-1": "Any difficulty",
+  "hero-desс-2--1": "We take into account",
+  "hero-desс-2--2": "the niche and user experience",
+  "hero-desс-3": "Uniqueness of design",
+  "hero-desс-4": "SEO optimization",
+  "hero-desс-5": "Set up contextual advertising as a gift",
+  "server-solutions": "Server solutions",
+  "server-solutions-desc": "Design and implementation of the project, development of API, work with databases, automations, bots",
+  "web-dev": "Turnkey Sitest",
+  "web-dev-desc": "From landing to a highly loaded site of any complexity",
+  "mobile-game-and-app": "Mobile applications",
+  "mobile-game-and-app-desc": "Cross-platform and native business solutions, 2D and 3D games, AR / VR",
+  "advertising-and-promotion": "Advertising and promotion",
+  "advertising-and-promotion-desc": "SEO and contextual and social networks advertising, conducting and auditing, remarketing, analytics",
+  "design-and-branding": "Design and branding",
+  "design-and-branding-desc": "Graphic design for sites, applications, presentations. UI design. Branding",
+  "cases": "Cases",
+  "dazz-desc": "A website with a personal account and online wallet, an affiliate program was developed. The DAZZ coin based on Quark technology was developed. Full platform development and maintenance",
+  "cgen-desc": "The CGEN coin was developed based on Quark technology, the coin was listed on exchanges. SWAP coins were held. A website was developed with a personal account and online wallet. Full platform development and maintenance",
+  "api-solutions": "API solutions for projects",
+  "api-solutions-desc": "APIs were developed for the Federal Service of Bailiffs, the unified federal registry of bankruptcy information, file cabinets of arbitration cases of the Russian Federation",
+  "crowdsale-desc": "This is a crowdfunding platform for raising funds and searching for specialists. The own coin CSNP was developed. Listing coins on exchanges. Full development and maintenance of the platform",
+  "whiz-biz-desc": "This is a foundation for the support and development of contemporary art. Website development",
+  "fly-game": "Flying games for children",
+  "fly-game-desc": "Mobile 2D game developed for iOS. Puzzle for children, offline. Published in the AppStore. Full development",
+  "fury-ride-desc": "Mobile 3D game developed for iOS. Motorcycle races, battles, realistic physics, more than 10km of unique tracks, smart opponents - bots. Offline Published in the AppStore. Full development",
+  "sniper-arena-desc": "An action packed 3D mobile game developed for iOS and Android. Programming the behavior of characters, server logic classes and UI. Designing classes of game content, animated FSM. Preparing \\ assembling \\ content finalizating",
+  "cases-form": "More cases",
+  "cases-form-desc": "Over the 4 years of the company's existence, a huge amount of work has been done. Upon request, we can send the full list of cases that we have the right to demonstrate under the confidentiality agreement",
+  "title-about": "About Us",
+  "title-about-second": "Our top priority is to help your business.",
+  "about-desc": "We will support you at every step and offer the best solutions to increase its effectiveness in the shortest possible time and with the least resources. Highly qualified specialists, individual approach and understanding of your goals as a result guarantee a truly high-quality product. We treat each project as our own, in return clients continue to work only with us, and often become our business partners",
+  "mike-aliakberov": "Mikhail Aliakberov",
+  "skills-lang": "Languages we work with every day",
+  "skills-soft": "The software we use",
+  "skills-git": "Version control",
+  "skills-services": "Teamwork Services We Use",
+  "skills-api": "Experience with the services and APIs",
+  "title-price": "Project cost calculation",
+  "title-price--1": "Calculate",
+  "title-price--2": "the cost of your project",
+  "next": "Next",
+  "step": "Step",
+  "step-from": "of",
+  "price-desc": "The average cost of such projects with us is",
+  "contacts-desc": "Tell us about your project",
+  "currency": "\u20BD",
+  "questions-1": {
+    "title": "Choose the products you need",
+    "variant": {
+      "site": "Website / Server",
+      "mobile": "Mobile development",
+      "advertising": "Advertising and promotion",
+      "other": "Nothing out of this"
+    }
+  },
+  "questions-2": {
+    "title": "Choose the products you need",
+    "variant": {
+      "brand": "Branding",
+      "crypto": "Banking",
+      "design": "Design without development",
+      "other-1": "Nothing out of this"
+    }
+  },
+  "questions-3": {
+    "title": "Specify a product of the WebSite / Server category",
+    "variant": {
+      "landing": "Landing page",
+      "online-store": "Online store",
+      "high-services": "highly loaded service",
+      "bots-api": "Automation / Bots / API"
+    }
+  },
+  "questions-4": {
+    "title": "What kind of mobile application do you need?",
+    "variant": {
+      "native-app": "Native application",
+      "crossplatform-app": "Cross-platform application",
+      "2d-game": "2D game",
+      "3d-game": "3D game"
+    }
+  },
+  "questions-5": {
+    "title": "What platform do you need the app / game on?",
+    "variant": {
+      "ios-fix": "ios",
+      "android-fix": "android"
+    }
+  },
+  "questions-6": {
+    "title": "What platform do you need the app / game on?",
+    "variant": {
+      "ios": "ios",
+      "android": "android"
+    }
+  },
+  "questions-7": {
+    "title": "What kind of advertising do you need?",
+    "variant": {
+      "seo-analytics": "Seo and analytics",
+      "context-advertising": "Contextual advertising and remarketing",
+      "social-advertising": "Social media advertising / promotion"
+    }
+  },
+  "questions-8": {
+    "title": "Choose a product to design",
+    "variant": {
+      "design-site": "Website design",
+      "design-presentation": "Presentation / Document design",
+      "design-app": "App design",
+      "other-2": "Another"
+    }
+  },
+  "mail-form": {
+    "error": {
+      "default": "Error",
+      "name": "Enter your name",
+      "phone": "Enter your phone number",
+      "email": "Enter your Email",
+      "message": "Enter your message",
+      "file": "File is too large",
+      "checkbox": "Confirm consent"
+    },
+    "order-project": "Order a project",
+    "get-price": "Get a price",
+    "send-request": "Send request",
+    "name": "Name",
+    "phone": "Phone",
+    "message": "Message",
+    "file": "Attach file",
+    "file-size": "5 mb max",
+    "send": "Send",
+    "check-personal": "I agree to the processing of",
+    "check-personal-link": "personal data",
+    "captcha": "This site is protected by reCAPTCHA and the Google",
+    "captcha-policy": "Privacy Policy",
+    "captcha-and": "and",
+    "captcha-agreement": "Terms of Service",
+    "captcha-apply-eng": "apply"
+  },
+  "brief": {
+    "status-success": "Thank you, your application has been accepted!",
+    "status-error": "Server error",
+    "title": "Development Brief",
+    "description": "A detailed brief will help us develop a product for you in a shorter time. Thank!",
+    "contacts-info": "Contact Information",
+    "company": "Company",
+    "contact-person": "Contact person, position",
+    "phone": "Phone",
+    "site": "Site",
+    "other": "Other",
+    "example": "e.g.",
+    "your-company": "Your company",
+    "your-company-questions-1": "Basic information - what the company represents, what it does and what it offers - services, goods",
+    "your-company-questions-1-example": "we import goods from China and sell in Russia",
+    "your-company-questions-2": "The problem that the company’s product / service solves and how the company solves this problem",
+    "your-company-questions-2-example": "it is difficult to find an apartment, service - to search for apartments",
+    "your-company-questions-3": "Unique selling proposition",
+    "your-company-questions-3-example": "the warmest and most technological jackets",
+    "your-company-questions-4": "What are the benefits of your project?",
+    "your-company-questions-4-example": "lower cost, delivery availability, tech support",
+    "your-company-questions-5": "List of competitors",
+    "your-company-questions-5-example": "List of sites",
+    "target-audience": "The target audience",
+    "target-audience-questions-1": "Which regions are of interest",
+    "target-audience-questions-1-example": "Moscow; Kazakhstan; The whole world",
+    "target-audience-questions-2": "Scope of the company",
+    "target-audience-questions-2-example": "the property",
+    "target-audience-questions-4": "Customer avatar",
+    "target-audience-questions-4-example": "age, gender, income, interests, etc.",
+    "project": "Ongoing project",
+    "project-questions-1": "Describe your vision for the project",
+    "project-questions-1-example": "it should be an outwardly simple, but stylish and very functional service for finding apartments, with smart recommendations, the ability to see the apartment in 3D, choose a rental period, see or leave a review about the tenant and landlord, etc.",
+    "project-questions-2": "The goal - what should convey / sell / show the developed product",
+    "project-questions-2-example": "sell goods; raise funds; help find an apartment",
+    "project-questions-3": "List of functions / tasks performed by",
+    "project-questions-3-example": "posting vacancies, searching for vacancies, displaying news, registering users, purchasing goods, logging in through social networks",
+    "project-questions-4": "Sections I would like to see",
+    "project-questions-4-example": "block of advantage basket",
+    "project-questions-5": "Will you need administrator functionality to edit content, manage users, etc. If so, for what exactly",
+    "project-questions-6": "Additional services",
+    "project-questions-6-example": "design, SEO promotion, contextual advertising",
+    "expectations": "Expectations",
+    "expectations-questions-1": "Expected Development Budget",
+    "expectations-questions-2": "Expected project development timelines"
+  },
+  "privacy-policy": {
+    "title": "Privacy policy",
+    "general-provisions": {
+      "title": "General Provisions",
+      "p-1": "This Privacy Policy applies to all personal information that Appelsin can receive, collects about the User while using the site, programs and other products owned by the company. Their use means the complete consent of the user with this Policy and the terms of processing of his personal information specified in it",
+      "p-2": "This privacy policy regarding the processing of personal data applies to all information that is received about users of their Appelsin products."
+    },
+    "general-concepts": {
+      "title": "Basic concepts",
+      "p-1": "Automated processing of personal data - processing of personal data using computer technology",
+      "p-2": "Blocking of personal data - temporary termination of the processing of personal data (unless the processing is necessary to clarify personal data)",
+      "p-3": "Personal data information system - a set of personal data contained in databases and processing information technologies and technical means",
+      "p-4": "Anonymization of personal data - actions, as a result of which it is impossible to determine without the use of additional information the ownership of personal data to a specific User or other personal data subject",
+      "p-5": "Personal data processing - any action (operation) or a set of actions (operations) performed using automation tools or without using such tools with personal data, including collection, recording, systematization, accumulation, storage, clarification (updating, modification), retrieval, use, transfer (distribution, provision, access), depersonalization, blocking, deletion, destruction of personal data",
+      "p-6": "Personal data - any information relating directly or indirectly to a specific or determined User of products belonging to Appelsin",
+      "p-7": "Provision of personal data - actions aimed at the disclosure of personal data to a specific person or a certain circle of persons",
+      "p-8": "Distribution of personal data - any actions aimed at disclosing personal data to an undefined circle of persons (transfer of personal data) or to familiarizing oneself with personal data of an unlimited circle of persons, including disclosing personal data in the media, posting on the Internet or providing access to personal in any other way; Cross-border transfer of personal data - the transfer of personal data to the territory of a foreign state to a foreign government authority, a foreign individual or foreign legal entity",
+      "p-9": "Destruction of personal data - any actions as a result of which personal data is irrevocably destroyed with the inability to further restore the content of personal data in the personal data information system and (or) as a result of which material carriers of personal data are destroyed"
+    },
+    "information": {
+      "title": "Information we collect",
+      "p-1": "Full Name",
+      "p-2": "Phone number",
+      "p-3": "E-mail address",
+      "p-4": "As well as anonymized user data (including cookies) with the help of Internet statistics and analytics services (Yandex Metric and Google Analytics and others)",
+      "p-5": "The above data hereinafter referred to in the Policy are united by the general concept of Personal Data"
+    },
+    "data-collection": {
+      "title": "Data collection goals",
+      "p-1": "The purpose of processing the User’s personal data is to inform the User by sending emails; providing the User with access to the services and products of the Company Appelsin, information and / or materials contained on the website",
+      "p-2": "Appelsin has the right to send the User notifications about new products and services, special offers and various events. The user can always refuse to receive informational messages by sending an email to info@appelsin.tech email marked \"Refusal of notifications of new products and services and special offers\"",
+      "p-3": "Anonymized User data collected using statistics and analytics services is used to collect information about the interaction of Users with the products of the Appelsin Company, to improve their quality and content"
+    },
+    "legal-grounds": {
+      "title": "Legal basis for the processing of personal data",
+      "p-1": "Appelsin processes the User’s personal data only if it is completed and / or sent by the User independently through special forms. By filling out the appropriate forms and / or sending your personal data to Appelsin, the User expresses his consent to this Policy",
+      "p-2": "Additionally, we process the available anonymized data about the User in case the User has not prohibited it"
+    },
+    "data-procedure": {
+      "title": "The procedure for the collection, storage, transfer and other types of processing of personal data",
+      "p-1": "The security of personal data processed by Appelsin is ensured through the implementation of legal, organizational and technical measures necessary to fully comply with the requirements of the current legislation in the field of personal data protection. Appelsin ensures the safety of personal data and takes all possible measures to exclude access to personal data of unauthorized persons",
+      "p-2": "The User’s personal data will never, under any circumstances, be transferred to third parties, with the exception of cases related to the implementation of applicable law",
+      "p-3": "In case of inaccuracies in personal data, the User can update them independently by sending a notification to Appelsin to the email address info@appelsin.tech marked \"Updating personal data\"",
+      "p-4": "The processing time for personal data is unlimited. The user can withdraw his consent to the processing of personal data at any time by sending an email to info@appelsin.tech with the note “Revocation of consent to the processing of personal data”"
+    },
+    "data-transfer": {
+      "title": "Cross-border transfer of personal data",
+      "p-1": "Prior to the cross-border transfer of personal data, Appelsin must make sure that the foreign state in whose territory it is supposed to transfer personal data protects the rights of personal data subjects",
+      "p-2": "Cross-border transfer of personal data on the territory of foreign states that do not meet the above requirements can be carried out only if there is a written consent of the personal data subject to the cross-border transfer of his personal data and / or the execution of the contract to which the personal data subject is a party"
+    },
+    "final-provisions": {
+      "title": "Final provisions",
+      "p-1": "The user can get any clarification on questions of interest regarding the processing of his personal data by contacting the email info@appelsin.tech. This document will reflect any changes to the personal data processing policy. The policy is valid indefinitely until it is replaced with a new version",
+      "p-2": "The current version of the Public Access Policy is located on the Internet at"
+    }
+  },
+  "404": {
+    "page": "Page not found",
+    "desc": "It looks like the page you need was deleted / moved or never existed. Try to find it in the menu or return to the main page",
+    "back": "Go back to the main page"
+  }
+}

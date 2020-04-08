@@ -1,0 +1,6 @@
+<svg version="1.1" class="svg-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 40 40" xml:space="preserve">
+    <line x1="15" y1="8" x2="40" y2="8" stroke="#fff" stroke-width="4"/>
+    <line x1="0" y1="20" x2="40" y2="20" stroke="#fff"  stroke-width="4"/>
+    <line x1="15" y1="32" x2="40" y2="32" stroke="#fff"  stroke-width="4"/>
+</svg>
