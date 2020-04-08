@@ -91,3 +91,6 @@ sw.*
 
 # smart-grid
 smart-grid.less
+
+api/
+package-lock.json
