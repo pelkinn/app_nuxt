@@ -1,5 +1,5 @@
 <template>
-  <form class="main-form" @submit.prevent="onSubmit" :class="{waiting: waiting, success: success || statusMail}">
+  <form class="main-form" @submit.prevent="onSubmit" :class="{waiting: waiting, success: success || sendMail}">
     <div class="col col--desc">
       <div class="wrapper-secondary">
         <div class="steps-num" v-if="formId === 'calc'">
@@ -8,12 +8,10 @@
           <span class="red">{{calcData.activeSteps + 1}} из {{calcData.steps.length + 1}}</span>
         </div>
         <p class="description">
-          <template v-if="formId === 'cases'">Больше кейсов</template>
-          <template v-else>Расскажите о вашем проекте</template>
+          <template v-if="formId === 'cases'">{{$t('cases-form')}}</template>
+          <template v-else>{{$t('contacts-desc')}}</template>
         </p>
-        <p v-if="formId === 'cases'" class="description--small">За 4 года существования компании сделано огромное
-          количество работ. По запросу мы можем выслать весь список кейсов, которые мы имеем право демонстрировать в
-          рамках договора о конфиденциальности</p>
+        <p v-if="formId === 'cases'" class="description--small">{{$t('cases-form-desc')}}</p>
         <ul v-else class="list-contacts" :class="formId">
           <li>
             <a class="link-contacts" href="tel:+79644952929">
@@ -31,55 +29,55 @@
       </div>
       <div class="btn-wrapper btn-wrapper--desktop" :class="{errorTooltip: error.server}">
         <button class="btn-wrapper__btn btn-wrapper__btn--default" type="submit">
-          <span v-if="!this.statusMail">
+          <span v-if="!this.sendMail">
             {{btnText}}
           </span>
-          <span v-else class="success">Заявка отправлена</span>
+          <span v-else class="success">{{$t('submit-success')}}</span>
         </button>
         <div class="error-tooltip error-tooltip--submit">
-          <span>Ошибка</span>
+          <span>{{$t('mail-form.error.default')}}</span>
         </div>
         <button class="btn-wrapper__btn btn-wrapper__btn--next" type="button" @click="showForm = !showForm">
-          <span v-if="!this.statusMail">{{btnText}}</span>
-          <span v-else class="success">Заявка отправлена</span>
+          <span v-if="!this.sendMail">{{btnText}}</span>
+          <span v-else class="success">{{$t('submit-success')}}</span>
         </button>
       </div>
     </div>
     <div class="col col--input" :class="{active : showForm}">
       <div class="input-wrapper">
         <div class="g-item-form" :class="{errorTooltip: error.name}">
-          <input class="g-item-form__field" type="text" :placeholder="'Имя'" v-model="form.name">
+          <input class="g-item-form__field" type="text" :placeholder="$t('mail-form.name')" v-model="form.name">
           <div class="error-tooltip">
-            <span>Введите имя</span>
+            <span>{{$t('mail-form.error.name')}}</span>
           </div>
         </div>
         <div class="g-item-form" :class="{errorTooltip: error.phone}">
-          <input class="g-item-form__field" type="tel" :placeholder="'Телефон'" v-model="form.phone">
+          <input class="g-item-form__field" type="tel" :placeholder="$t('mail-form.phone')" v-model="form.phone">
           <div class="error-tooltip">
-            <span>Введите телефон</span>
+            <span>{{$t('mail-form.error.phone')}}</span>
           </div>
         </div>
         <div class="g-item-form" :class="{errorTooltip: error.email}">
           <input class="g-item-form__field" type="email" placeholder="E-mail" v-model="form.email">
           <div class="error-tooltip">
-            <span>Введите E-mail</span>
+            <span>{{$t('mail-form.error.email')}}</span>
           </div>
         </div>
         <div class="g-item-form g-item-form--textarea" :class="{errorTooltip: error.message}">
-          <textarea class="g-item-form__field g-item-form__field--textarea" :placeholder="'Текст сообщения'"
+          <textarea class="g-item-form__field g-item-form__field--textarea" :placeholder="$t('mail-form.message')"
                     v-model="form.message"></textarea>
           <div class="error-tooltip">
-            <span>Введите текст сообщения</span>
+            <span>{{$t('mail-form.error.message')}}</span>
           </div>
         </div>
         <div class="file-wrapper" :class="{errorTooltip: error.file}">
           <input type="file" name="file" :id="`file_${this.formId}`" v-on:change="handleFile" class="visually-hidden"/>
           <label class="file-link" :class="formId" v-if="!showFileName" :for="`file_${this.formId}`">
-            <span class="file-text--big">Прикрепить файл</span>
-            <span class="file-text--small">(до 5 Мб)</span>
+            <span class="file-text--big">{{$t('mail-form.file')}}</span>
+            <span class="file-text--small">({{$t('mail-form.file-size')}})</span>
           </label>
           <div class="error-tooltip error-tooltip--submit">
-            <span>Файл слишком большой</span>
+            <span>{{$t('mail-form.error.file')}}</span>
           </div>
           <div class="file-progress" v-if="showFileName">
             <svg-file class="svg-file" :class="formId"/>
@@ -93,15 +91,14 @@
       </div>
       <div class="checkbox-wrapper" :class="{errorTooltip: error.checked}">
         <div class="error-tooltip error-tooltip--top">
-          <span>Подтвердите согласие</span>
+          <span>{{$t('mail-form.error.checkbox')}}</span>
         </div>
         <input type="checkbox" :id="`check_person_${this.formId}`" v-model="form.checkedPersonalData">
         <label class="label-person" :class="formId" :for="`check_person_${this.formId}`">
-          <span>Я согласен на обработку </span>
-          <a class="link-person" href="#" @click.prevent="$modal.show('modal-policy')">персональных данных</a>. Этот
-          сайт защищен reCAPCHA при соблюдении <a class="link-person" href="https://policies.google.com/privacy"
-                                                  target="_blank">политики конфиденциальности</a> Google и <a
-          class="link-person" href="https://policies.google.com/terms" target="_blank">пользовательского соглашения</a>.
+          <span>{{$t('mail-form.check-personal')}} </span>
+          <a class="link-person" href="#" @click.prevent="$modal.show('modal-policy')">{{$t('mail-form.check-personal-link')}}</a>. {{$t('mail-form.captcha')}} <a class="link-person" href="https://policies.google.com/privacy"
+                                                  target="_blank">{{$t('mail-form.captcha-policy')}}</a> {{$t('mail-form.captcha-and')}} <a
+          class="link-person" href="https://policies.google.com/terms" target="_blank">{{$t('mail-form.captcha-agreement')}}</a>.
         </label>
       </div>
       <div class="btn-wrapper btn-wrapper--mobile" :class="{errorTooltip: error.server}">
@@ -109,11 +106,11 @@
           <svg-arrow-slider/>
         </button>
         <button class="btn-wrapper__btn btn-wrapper__btn--mobile" type="submit">
-          <span v-if="this.statusMail">Отправить</span>
-          <span v-else class="success">Заявка отправлена</span>
+          <span v-if="this.sendMail">{{$t('mail-form.send')}}</span>
+          <span v-else class="success">{{$t('submit-success')}}</span>
         </button>
         <div class="error-tooltip error-tooltip--submit">
-          <span>Ошибка</span>
+          <span>{{$t('mail-form.error.default')}}</span>
         </div>
       </div>
     </div>
@@ -126,10 +123,11 @@
   import SvgArrowSlider from '~/assets/img/icon/arrow-slider.svg?inline'
   import SvgFile from '~/assets/img/icon/file.svg?inline'
   import SvgFileDelete from '~/assets/img/icon/delete.svg?inline'
+  import { mapState } from 'vuex'
 
   export default {
     name: "MainForm",
-    props: ['formId', 'btnText', 'calcData', 'statusMail'],
+    props: ['formId', 'btnText', 'calcData'],
     components: {
       SvgPhone,
       SvgEmail,
@@ -171,7 +169,7 @@
     },
     methods: {
       async onSubmit() {
-        if (this.statusMail) {
+        if (this.sendMail) {
           return false
         } else {
           if (this.form.name.length < 1) {
@@ -187,6 +185,7 @@
           } else {
             try {
               const token = await this.$recaptcha.execute('login')
+              console.log(token)
               this.waiting = true
               let formData = new FormData();
               formData.append('token', token);
@@ -201,18 +200,25 @@
                 formData.append('questions', this.questionsName);
                 formData.append('price', this.price);
               }
-              this.$axios.$post('/api/mail', formData, {
-                onUploadProgress: (progressEvent) => {
-                  this.percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
-                }
+              fetch('/mail.php', {
+                method: 'POST',
+                body: formData
               }).then(response => {
+              // this.$axios.$post('/api/mail', formData, {
+              //   onUploadProgress: (progressEvent) => {
+              //     this.percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+              //   }
+              // }).then(response => {
                 this.waiting = false
-                this.$bus.$emit('email-send', true)
-                this.$modal.show('modal-response', {
-                  data: this.form,
-                  status: 'success',
-                  hashClass: 'orange'
-                })
+                if (response.ok) {
+                  this.$store.dispatch('setSuccessMail')
+                  this.$modal.show('modal-response', {
+                    data: this.form,
+                    status: 'success',
+                    hashClass: 'orange'
+                  })
+                }
+
               }).catch(e => {
                 this.waiting = false
               })
@@ -283,7 +289,8 @@
         let res;
         this.form.file !== '' ? res = true : res = false
         return res
-      }
+      },
+      ...mapState(['sendMail'])
     }
   }
 </script>

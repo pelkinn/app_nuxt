@@ -12,10 +12,10 @@
             <span v-if="$i18n.locale === 'ru'">RU</span>
             <span v-else>EN</span>
           </p>
-          <nuxt-link :to="`/en` + $route.fullPath" class="lang lang-a" v-show="showLang" v-if="$i18n.locale === 'ru'">
+          <nuxt-link :to="`/en` + $route.fullPath" class="lang lang-a" v-show="showLang" v-if="$i18n.locale === 'ru'" @click.native="showLang = false">
             <span>EN</span>
           </nuxt-link>
-          <nuxt-link :to="$route.fullPath.replace(/^\/[^\/]+/, '')" class="lang lang-a" v-show="showLang" v-else>
+          <nuxt-link :to="$route.fullPath.replace(/^\/[^\/]+/, '')" class="lang lang-a" v-show="showLang" @click.native="showLang = false" v-else>
             <span>RU</span>
           </nuxt-link>
 <!--          <lang-select :options="languageSelect" :classOnScroll="noScroll" :activeMenu="showMenu" :selected="selected" v-on:updateOption="newLocale"></lang-select>-->
@@ -31,22 +31,22 @@
       </div>
       <ul class="menu-list">
         <li class="item">
-          <a href="#about" class="link" @click="menuLink('#about')">О нас</a>
+          <a href="#about" class="link" @click="menuLink('#about')">{{$t('about')}}</a>
         </li>
         <li class="item">
-          <a href="#services" class="link" @click="menuLink('#services')">Услуги</a>
+          <a href="#services" class="link" @click="menuLink('#services')">{{$t('services')}}</a>
         </li>
         <li class="item">
-          <a href="#cases" class="link" @click="menuLink('#cases')">Наши работы</a>
+          <a href="#cases" class="link" @click="menuLink('#cases')">{{$t('our-work')}}</a>
         </li>
         <li class="item">
-          <a href="#price" class="link" @click="menuLink('#price')">Рассчитать стоимость</a>
+          <a href="#price" class="link" @click="menuLink('#price')">{{$t('cost-calculation')}}</a>
         </li>
         <li class="item">
-          <a href="#contacts" class="link" @click="menuLink('#contacts')">Контакты</a>
+          <a href="#contacts" class="link" @click="menuLink('#contacts')">{{$t('contacts')}}</a>
         </li>
         <li class="item item--submit">
-          <a href="#contacts" class="link" @click="menuLink('#contacts')">Оставить заявку</a>
+          <a href="#contacts" class="link" @click="menuLink('#contacts')">{{$t('submit-application')}}</a>
         </li>
       </ul>
     </div>
@@ -115,27 +115,6 @@
       }
     },
     computed: {
-    },
-    watch: {
-      // selected: function (newSelected, oldSelected) {
-      //   if (newSelected.value === 'ru-RU') {
-      //     this.$i18n.locale = 'ru-RU'
-      //     localStorage.setItem('lang', 'ru-RU')
-      //   } else if (newSelected.value === 'en-US') {
-      //     this.$i18n.locale = 'en-US'
-      //     localStorage.setItem('lang', 'en-US')
-      //   }
-      // }
-    },
-    created() {
-      // let langLocal = localStorage.getItem('lang')
-      // if (langLocal === 'ru-RU') {
-      //   this.selected = {label: 'Ru', value: 'ru-RU'}
-      // } else if (langLocal === 'en-US') {
-      //   this.selected = {label: 'En', value: 'en-US'}
-      // } else {
-      //   this.selected = {label: 'En', value: 'en-US'}
-      // }
     },
     mounted () {
       this.lastScrollPosition = window.pageYOffset
@@ -276,6 +255,18 @@
           }
         }
       }
+      .lang-wrapper {
+        .lang {
+          >span {
+            color: #000;
+          }
+          &-r {
+            &::after {
+              border-top-color: #000;
+            }
+          }
+        }
+      }
     }
   }
   .container {
@@ -283,8 +274,6 @@
     align-items: center;
     flex-wrap: wrap;
     transition: all 0.3s ease-in-out;
-    /*.sm-block({ background: rgba(0,0,0,0.8); height: 50px;});
-    .md-height({ background: rgba(0,0,0,0.8); height: 50px;});*/
   }
   .logo-wrapper {
     display: flex;
@@ -320,23 +309,24 @@
     .lang {
       cursor: pointer;
       >span {
-        font-size: 2rem;
+        font-size: 1.7rem;
         transition: 0.3s;
+        font-weight: 300;
       }
       &-r {
         position: relative;
         display: flex;
         flex-direction: column;
-        padding-right: 25px;
+        padding-right: 18px;
         &::after {
           content: '';
           display: block;
           position: absolute;
-          top: 10px;
+          top: 7px;
           right: 0;
           border-top: 8px solid  #fff;
-          border-left: 4px solid transparent;
-          border-right: 4px solid transparent;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
           transition: 0.3s;
         }
         &.active {
@@ -350,8 +340,9 @@
       }
       &-a {
         position: absolute;
-        bottom: -30px;
+        bottom: -25px;
         display: block;
+        color: #fff;
       }
     }
   }

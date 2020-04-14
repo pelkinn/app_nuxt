@@ -8,24 +8,24 @@
       </div>
       <div class="wrapper-overflow">
         <div class="title-wrapper">
-          <h2 class="title">Бриф на разработку</h2>
+          <h2 class="title">{{$t('brief.title')}}</h2>
         </div>
         <form class="form-response" @submit.prevent="onSubmit" :class="[{disabled: disabled}, hashClass]">
           <div class="status">
             <div class="status__success" v-if="status === 'success'">
-              <span>Спасибо, ваша заявка принята!!</span>
+              <span>{{$t('brief.status-success')}}!</span>
             </div>
             <div class="status__error" v-if="status === 'error'">
-              <span>Ошибка сервера</span>
+              <span>{{$t('brief.status-error')}}</span>
             </div>
           </div>
           <div class="wrapper-description">
-            <strong class="wrapper-description__description">Подробно заполненный бриф поможет нам разработать для вас продукт в более короткие сроки. Спасибо!</strong>
+            <strong class="wrapper-description__description">{{$t('brief.description')}}</strong>
           </div>
           <fieldset class="form-response__group group-item">
-            <h3 class="group-item__title">1. Контактная информация</h3>
+            <h3 class="group-item__title">1. {{$t('brief.contacts-info')}}</h3>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="contactsInfo-1">Компания</label>
+              <label class="g-item-form__label" for="contactsInfo-1">{{$t('brief.company')}}</label>
               <textarea-resize>
                 <textarea class="g-item-form__field g-item-form__field--modals"
                           v-model="form.company" id="contactsInfo-1" rows="1"></textarea>
@@ -33,19 +33,19 @@
 
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="contactsInfo-2">Контактное лицо, должность</label>
+              <label class="g-item-form__label" for="contactsInfo-2">{{$t('brief.contact-person')}}</label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.name" id="contactsInfo-2" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="contactsInfo-3">Телефон</label>
+              <label class="g-item-form__label" for="contactsInfo-3">{{$t('brief.phone')}}</label>
               <input class="g-item-form__field g-item-form__field--modals" type="tel"
                      v-model="form.phone" id="contactsInfo-3" @keypress.enter.prevent>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="contactsInfo-4">Сайт</label>
+              <label class="g-item-form__label" for="contactsInfo-4">{{$t('brief.site')}}</label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.site" id="contactsInfo-4" rows="1"></textarea>
@@ -57,7 +57,7 @@
                      v-model="form.email" id="contactsInfo-5" @keypress.enter.prevent>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="contactsInfo-6">Другое <span class="g-item-form__label--gray">(например Skype)</span></label>
+              <label class="g-item-form__label" for="contactsInfo-6">{{$t('brief.other')}} <span class="g-item-form__label--gray">({{$t('brief.example')}} Skype)</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.other_contacts" id="contactsInfo-6" rows="1"></textarea>
@@ -65,37 +65,37 @@
             </div>
           </fieldset>
           <fieldset class="form-response__group group-item">
-            <h3 class="group-item__title">2. Ваша компания</h3>
+            <h3 class="group-item__title">2. {{$t('brief.your-company')}}</h3>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-1">Основная информация - что представляет компания, что делает и что предлагает - услуги, товары <span class="g-item-form__label--gray">(например: привозим товары из Китая и продаем в России)</span></label>
+              <label class="g-item-form__label" for="project-1">{{$t('brief.your-company-questions-1')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.your-company-questions-1-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals "
                         id="project-1" v-model="form.questions[0].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-2">Проблема, которую решает продукт/услуга компании, и как компания решает эту проблему <span class="g-item-form__label--gray">(например: сложно найти квартиру, сервис - для поиска квартир)</span></label>
+              <label class="g-item-form__label" for="project-2">{{$t('brief.your-company-questions-2')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.your-company-questions-2-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-2" v-model="form.questions[1].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-3">Уникальное торговое предложение <span class="g-item-form__label--gray">(например: самые теплые и технологичные куртки)</span></label>
+              <label class="g-item-form__label" for="project-3">{{$t('brief.your-company-questions-3')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.your-company-questions-3-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals "
                         id="project-3" v-model="form.questions[2].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-4">Какие преимущества у вашего проекта? <span class="g-item-form__label--gray">(например: ниже стоимость, наличие доставки, тех поддержки)</span></label>
+              <label class="g-item-form__label" for="project-4">{{$t('brief.your-company-questions-4')}}? <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.your-company-questions-4-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-4" v-model="form.questions[3].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-5">Список конкурентов <span class="g-item-form__label--gray">(Список сайтов)</span></label>
+              <label class="g-item-form__label" for="project-5">{{$t('brief.your-company-questions-5')}} <span class="g-item-form__label--gray">({{$t('brief.your-company-questions-5-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.questions[4].answers" id="project-5" rows="1"></textarea>
@@ -103,23 +103,23 @@
             </div>
           </fieldset>
           <fieldset class="form-response__group group-item">
-            <h3 class="group-item__title">3. Целевая аудитория</h3>
+            <h3 class="group-item__title">3. {{$t('brief.target-audience')}}</h3>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-6">Какие регионы интересуют<span class="g-item-form__label--gray">(например: Москва; Казахстан; Весь Мир)</span></label>
+              <label class="g-item-form__label" for="project-6">{{$t('brief.target-audience-questions-1')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.target-audience-questions-1-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.questions[5].answers" id="project-6" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-7">Сфера деятельности компании <span class="g-item-form__label--gray">(например: недвижимость)</span></label>
+              <label class="g-item-form__label" for="project-7">{{$t('brief.target-audience-questions-2')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.target-audience-questions-2-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-7" v-model="form.questions[6].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-9">Аватар клиентов <span class="g-item-form__label--gray">(возраст, пол, доход, интересы и тд)</span></label>
+              <label class="g-item-form__label" for="project-9">{{$t('brief.target-audience-questions-4')}} <span class="g-item-form__label--gray">({{$t('brief.target-audience-questions-4-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         v-model="form.questions[7].answers" id="project-9" rows="1"></textarea>
@@ -127,44 +127,44 @@
             </div>
           </fieldset>
           <fieldset class="form-response__group group-item">
-            <h3 class="group-item__title">4. Реализуемый проект</h3>
+            <h3 class="group-item__title">4. {{$t('brief.project')}}</h3>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-10">Опишите ваше видение проекта <span class="g-item-form__label--gray">(например: это должен быть внешне простой, но стильный и очень функциональный сервис поиска квартир, с умными рекомендациями, возможностью посмотреть квартиру в 3д, выбрать период аренды, посмотреть или оставить отзыв о арендаторе и арендодателе и тд)</span></label>
+              <label class="g-item-form__label" for="project-10">{{$t('brief.project-questions-1')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}:  {{$t('brief.project-questions-1-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-10" v-model="form.questions[8].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-11">Цель - что должен донести/продать/показать разрабатавыемый продукт <span class="g-item-form__label--gray">(например: продать товар; собрать средства; помомочь найти квартиру)</span></label>
+              <label class="g-item-form__label" for="project-11">{{$t('brief.project-questions-2')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.project-questions-2-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-11" v-model="form.questions[9].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-12">Список функций/задач, которые выполняет <span class="g-item-form__label--gray">(например: размещение вакансий, поиск вакансий, отображение новостей, регистрация пользователей, покупки товаров, вход через соцсети)</span></label>
+              <label class="g-item-form__label" for="project-12">{{$t('brief.project-questions-3')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.project-questions-3-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-12" v-model="form.questions[10].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-13">Разделы, которые хотелось бы видеть <span class="g-item-form__label--gray">(например: блок приемущества, корзина)</span></label>
+              <label class="g-item-form__label" for="project-13">{{$t('brief.project-questions-4')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.project-questions-4-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-13" v-model="form.questions[11].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-14">Потребуется ли функционал администратора для редактирования контента, управления пользователями и тд. Если да, то для чего именно</label>
+              <label class="g-item-form__label" for="project-14">{{$t('brief.project-questions-5')}}</label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-14" v-model="form.questions[12].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-15">Дополнительные услуги <span class="g-item-form__label--gray">(например: дизайн, SEO продвижение, контекстная реклама)</span></label>
+              <label class="g-item-form__label" for="project-15">{{$t('brief.project-questions-6')}} <span class="g-item-form__label--gray">({{$t('brief.example')}}: {{$t('brief.project-questions-6-example')}})</span></label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-15" v-model="form.questions[13].answers" rows="1"></textarea>
@@ -172,16 +172,16 @@
             </div>
           </fieldset>
           <fieldset class="form-response__group group-item">
-            <h3 class="group-item__title">5. Ожидания</h3>
+            <h3 class="group-item__title">5. {{$t('brief.expectations')}}</h3>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-16">Ожидаемый бюджет на разработку</label>
+              <label class="g-item-form__label" for="project-16">{{$t('brief.expectations-questions-1')}}</label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-16" v-model="form.questions[14].answers" rows="1"></textarea>
               </textarea-resize>
             </div>
             <div class="g-item-form g-item-form--modals">
-              <label class="g-item-form__label" for="project-17">Ожидаемые сроки разработки проекта</label>
+              <label class="g-item-form__label" for="project-17">{{$t('brief.expectations-questions-2')}}</label>
               <textarea-resize>
               <textarea class="g-item-form__field g-item-form__field--modals"
                         id="project-17" v-model="form.questions[15].answers" rows="1"></textarea>
@@ -189,7 +189,7 @@
             </div>
           </fieldset>
           <div class="btn-wrapper">
-            <button class="btn-wrapper__btn" type="submit">Отправить</button>
+            <button class="btn-wrapper__btn" type="submit">{{$t('mail-form.send')}}</button>
           </div>
         </form>
       </div>

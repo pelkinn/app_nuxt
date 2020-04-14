@@ -5,13 +5,13 @@
         <div class="caption-wrapper default-margin-bottom">
           <div class="g-caption-block">
             <div class="wrapper-baseline">
-              <h2 class="g-caption">Контакты</h2>
+              <h2 class="g-caption">{{$t('contacts')}}</h2>
               <span class="underscore"></span>
             </div>
           </div>
         </div>
         <div class="content-wrapper">
-          <main-form :formId="'contact'" :btnText="'Заказать проект'" :statusMail="statusMail"/>
+          <main-form :formId="'contact'" :btnText="$t('mail-form.order-project')"/>
         </div>
       </div>
     </div>
@@ -23,7 +23,6 @@
 
   export default {
     name: 'contacts-block',
-    props: ['statusMail'],
     components: {
       MainForm
     },
@@ -31,10 +30,6 @@
       return {
       }
     },
-    methods: {
-    },
-    computed: {
-    }
   }
 </script>
 

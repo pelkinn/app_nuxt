@@ -2,8 +2,7 @@
   <footer class="b-footer" :class="{active : showMenu}">
     <div class="container">
       <a class="phone" href="tel:+79644952929">+7 (964) 495-29-29</a>
-      <a class="policy" href="#" @click.prevent="$modal.show('modal-policy')">Политика конфиденциальности</a>
-
+      <a class="policy" href="#" @click.prevent="$modal.show('modal-policy')">{{$t('privacy-policy.title')}}</a>
     </div>
   </footer>
 </template>

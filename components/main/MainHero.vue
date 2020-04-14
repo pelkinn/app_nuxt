@@ -9,37 +9,37 @@
           <svg-appelsin-hero/>
         </div>
         <div class="desc-wrapper">
-          <h1 class="visually-hidden">Делаем сайты под ключ</h1>
+          <h1 class="visually-hidden">{{$t('title-main')}}</h1>
           <p class="desc-caption">
-            <span class="symbol">Делаем сайты </span>
+            <span class="symbol">{{$t('title-main--1')}} </span>
             <br>
-            <span class="symbol">под ключ</span>
+            <span class="symbol">{{$t('title-main--2')}}</span>
             <span class="underscore"></span>
           </p>
           <ul class="servises-list">
             <li class="item">
               <svg-check-mark class="svg" />
-              <p class="item-link">Любая сложность</p>
+              <p class="item-link">{{$t('hero-desс-1')}}</p>
             </li>
             <li class="item">
               <svg-check-mark class="svg" />
-              <p class="item-link">Учитываем особенности ниши <br> и пользовательского опыта</p>
+              <p class="item-link">{{$t('hero-desс-2--1')}} <br> {{$t('hero-desс-2--2')}}</p>
             </li>
             <li class="item">
               <svg-check-mark class="svg" />
-              <p class="item-link">Уникальность дизайна</p>
+              <p class="item-link">{{$t('hero-desс-3')}}</p>
             </li>
             <li class="item">
               <svg-check-mark class="svg" />
-              <p class="item-link">SEO-оптимизация</p>
+              <p class="item-link">{{$t('hero-desс-4')}}</p>
             </li>
             <li class="item">
               <svg-check-mark class="svg" />
-              <p class="item-link">Настройка контекстной рекламы в подарок</p>
+              <p class="item-link">{{$t('hero-desс-5')}}</p>
             </li>
           </ul>
           <a href="#contacts" class="btn-hero">
-            <span>Заказать проект</span>
+            <span>{{$t('mail-form.order-project')}}</span>
           </a>
         </div>
       </div>

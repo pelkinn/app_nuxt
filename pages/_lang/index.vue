@@ -1,40 +1,37 @@
 <template>
   <div>
-    <img class="img" src="~/assets/img/appelsin.png">
-<!--    <div id="nav-menu" class="navigation-wrapper">-->
-<!--      <button class="arrow next-slide" @click="prevSlide"></button>-->
-<!--      <ul id="mainMenu" class="main-nav-menu">-->
-<!--        <li data-menuanchor="main" class="active">-->
-<!--          <a class="link-section" href="#main"></a>-->
-<!--        </li>-->
-<!--        <li data-menuanchor="services">-->
-<!--          <a class="link-section" href="#services"></a>-->
-<!--        </li>-->
-<!--        <li data-menuanchor="cases">-->
-<!--          <a class="link-section" href="#cases"></a>-->
-<!--        </li>-->
-<!--        <li data-menuanchor="price">-->
-<!--          <a class="link-section" href="#price"></a>-->
-<!--        </li>-->
-<!--        <li data-menuanchor="about">-->
-<!--          <a class="link-section" href="#about"></a>-->
-<!--        </li>-->
-<!--        <li data-menuanchor="contacts">-->
-<!--          <a class="link-section" href="#contacts"></a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--      <button class="arrow prev-slide" @click="nextSlide"></button>-->
-<!--    </div>-->
-<!--    <client-only>-->
-<!--      <full-page :options="options" id="fullpage">-->
-<!--        <main-hero/>-->
-<!--        <main-services :fullPageReady="fullPageReady" :resize="resize"/>-->
-<!--        <main-cases :fullPageReady="fullPageReady" :resize="resize" :statusMail="statusMail"/>-->
-<!--        <main-price :statusMail="statusMail"/>-->
-<!--        <main-about :fullPageReady="fullPageReady" :resize="resize"/>-->
-<!--        <main-contacts :statusMail="statusMail"/>-->
-<!--      </full-page>-->
-<!--    </client-only>-->
+    <div id="nav-menu" class="navigation-wrapper">
+      <button class="arrow next-slide" @click="prevSlide"></button>
+      <ul id="mainMenu" class="main-nav-menu">
+        <li data-menuanchor="main" class="active">
+          <a class="link-section" href="#main"></a>
+        </li>
+        <li data-menuanchor="services">
+          <a class="link-section" href="#services"></a>
+        </li>
+        <li data-menuanchor="cases">
+          <a class="link-section" href="#cases"></a>
+        </li>
+        <li data-menuanchor="price">
+          <a class="link-section" href="#price"></a>
+        </li>
+        <li data-menuanchor="about">
+          <a class="link-section" href="#about"></a>
+        </li>
+        <li data-menuanchor="contacts">
+          <a class="link-section" href="#contacts"></a>
+        </li>
+      </ul>
+      <button class="arrow prev-slide" @click="nextSlide"></button>
+    </div>
+    <full-page :options="options" id="fullpage">
+      <main-hero/>
+      <main-services :fullPageReady="fullPageReady" :resize="resize"/>
+      <main-cases :fullPageReady="fullPageReady" :resize="resize"/>
+      <main-price/>
+      <main-about :fullPageReady="fullPageReady" :resize="resize"/>
+      <main-contacts/>
+    </full-page>
   </div>
 </template>
 
@@ -51,6 +48,28 @@
 
   export default {
     name: "TheMain",
+    head () {
+      return { title: this.$t('meta.title'),
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.$t('meta.description')
+          },
+          {
+            name: 'og:title',
+            content: this.$t('meta.og-title')
+          },
+          {
+            name: 'og:description',
+            content: this.$t('meta.og-description')
+          },
+          {
+            name: 'og:locale',
+            content: this.$t('meta.og-locale')
+          },
+        ]}
+    },
     components: {
       MainHeader,
       MainHero,
@@ -60,23 +79,12 @@
       MainAbout,
       MainContacts
     },
-    // provide() {
-    //   const disabledForm = {}
-    //   Object.defineProperty(disabledForm, 'statusMail', {
-    //     enumerable: true,
-    //     get: () => this.statusMail,
-    //   })
-    //   return { disabledForm }
-    // },
     data() {
       return {
         resize: true,
-        // windowWidth: 25,
-        // windowWidth: window.innerWidth,
         fullPageReady: false,
-        statusMail: false,
         options: {
-          licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+          licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
           verticalCentered: true,
           controlArrows: true,
           fixedElements: '#nav-menu',
@@ -84,7 +92,6 @@
           menu: '#mainMenu',
           responsiveHeight: 750,
           responsiveWidth: 750,
-          // onLeave: this.getActiveSlideCustom,
           afterRender: ()=> {
             this.fullPageReady = true
             setTimeout(()=>{
@@ -106,31 +113,7 @@
       getActiveSlideCustom(origin, destination) {
         this.$emit('updateOption', destination.anchor);
       },
-      // resizeSwiper() {
-      //   this.windowWidth = window.innerWidth
-      // },
     },
-    // created() {
-    //   window.addEventListener('resize', this.resizeSwiper)
-    // },
-    // destroyed() {
-    //   window.removeEventListener('resize', this.resizeSwiper)
-    // },
-    mounted() {
-      this.$bus.$on('email-send', () => {
-        this.statusMail = true
-      })
-    },
-    // watch: {
-    //   windowWidth(newVal, oldVal) {
-    //     if (newVal !== oldVal) {
-    //       this.resize = false
-    //       setTimeout(()=>{
-    //         this.resize = true
-    //       },100)
-    //     }
-    //   }
-    // }
   }
 </script>
 

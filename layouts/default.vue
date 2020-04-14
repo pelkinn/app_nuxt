@@ -1,14 +1,14 @@
 <template>
   <div>
-<!--    <main-header />-->
-<!--    <main-social/>-->
-<!--    <main>-->
+    <main-header />
+    <main-social/>
+    <main>
       <nuxt />
-<!--    </main>-->
-<!--    <main-footer/>-->
+    </main>
+    <main-footer/>
 
-<!--    <modal-policy/>-->
-<!--    <modal-brief/>-->
+    <modal-policy/>
+    <modal-brief/>
   </div>
 </template>
 

@@ -5,23 +5,10 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Высоконагруженные сайты, мобильные приложения, игры, дизайн, брендинг, продвижение',
+    title: '',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'APPELSIN - это digital студия, занимающаяся разработкой комплексных омниканальных IT-решений. Создание самых современных сайтов, сложных высоконагруженных веб-сервисов и серверных решений, мобильных приложений и игр, дизайна и брендинга, а также реклама и продвижение.'
-      },
-      {
-        name: 'og:title',
-        content: 'разработка комплексных IT-решений'
-      },
-      {
-        name: 'og:description',
-        content: 'Создание современных сайтов, сложных высоконагруженных веб-сервисов и серверных решений, мобильных приложений и игр, дизайна и брендинга, а также реклама и продвижение.'
-      },
       {
         name: 'og:url',
         content: 'https://appelsin.tech'
@@ -33,10 +20,6 @@ export default {
       {
         name: 'og:site_name',
         content: 'Appelsin.tech'
-      },
-      {
-        name: 'og:locale',
-        content: 'ru_RU'
       },
       {
         name: 'fb:app_id',
@@ -98,6 +81,7 @@ export default {
   */
   plugins: [
     {src: '@/plugins/swiper', mode: 'client'},
+    { src: '~/plugins/fullpage', mode: 'client' },
     '@/plugins/eventBus',
     '@/plugins/vue-js-modal',
     '@/plugins/i18n.js'
@@ -150,6 +134,7 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+
     }
   }
 }

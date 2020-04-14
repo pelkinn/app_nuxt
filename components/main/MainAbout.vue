@@ -5,7 +5,7 @@
         <div class="caption-wrapper default-margin-bottom">
           <div class="g-caption-block">
             <div class="wrapper-baseline">
-              <h2 class="g-caption">О нас</h2>
+              <h2 class="g-caption">{{$t('title-about')}}</h2>
               <span class="underscore"></span>
             </div>
           </div>
@@ -29,10 +29,10 @@
                 <span class="symbol">
                   <svg-double-quote/>
                 </span>
-                  <h3 class="description-strong">Наш главный приоритет - помочь вашему бизнесу</h3>
-                  <em class="description">Мы поддержим на каждом этапе и предложим лучшие решения, чтобы повысить его эффективность в минимальные сроки и с минимальными ресурсами. Высококвалифицированные специалисты, индивидуальный подход и понимание ваших целей в результате гарантируют действительно качественный продукт. К каждому проекту мы относимся как к своему, взамен клиенты продолжают работать только с нами, а зачастую и становятся нашими бизнес-партнерами</em>
+                  <h3 class="description-strong">{{$t('title-about-second')}}</h3>
+                  <em class="description">{{$t('about-desc')}}</em>
                   <p class="admin">
-                    <strong>Михаил Алиакберов</strong>
+                    <strong>{{$t('mike-aliakberov')}}</strong>
                     <span>CEO & Founder</span>
                   </p>
                 </div>
@@ -44,7 +44,7 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="slide-wrapper skills-slide">
-                        <h3 class="skills-desc">Языки с которыми мы работаем каждый день:</h3>
+                        <h3 class="skills-desc">{{$t('skills-lang')}}:</h3>
                         <ul class="skills-list">
                           <li class="skills">С#,</li>
                           <li class="skills">Java,</li>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="slide-wrapper skills-slide">
-                        <h3 class="skills-desc">Софт, которым мы пользуемся:</h3>
+                        <h3 class="skills-desc">{{$t('skills-soft')}}:</h3>
                         <ul class="skills-list">
                           <li class="skills">Visual Studio,</li>
                           <li class="skills">Eclipse,</li>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="slide-wrapper skills-slide">
-                        <h3 class="skills-desc">Контроль версий:</h3>
+                        <h3 class="skills-desc">{{$t('skills-git')}}:</h3>
                         <ul class="skills-list">
                           <li class="skills">SVN,</li>
                           <li class="skills">Git</li>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="slide-wrapper skills-slide">
-                        <h3 class="skills-desc">Сервисы командного взаимодействия, которые мы используем:</h3>
+                        <h3 class="skills-desc">{{$t('skills-services')}}:</h3>
                         <ul class="skills-list">
                           <li class="skills">Assembla,</li>
                           <li class="skills">Trello,</li>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="slide-wrapper skills-slide">
-                        <h3 class="skills-desc">Опыт работы с сервисами и API:</h3>
+                        <h3 class="skills-desc">{{$t('skills-api')}}:</h3>
                         <ul class="skills-list api">
                           <li class="skills">Cloudflare,</li>
                           <li class="skills">GoogleMaps,</li>

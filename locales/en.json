@@ -256,5 +256,12 @@
     "page": "Page not found",
     "desc": "It looks like the page you need was deleted / moved or never existed. Try to find it in the menu or return to the main page",
     "back": "Go back to the main page"
+  },
+  "meta":{
+    "title": "Highly loaded sites, mobile applications, games, design, branding, promotion",
+    "description": "APPELSIN is a digital studio developing integrated omnichannel IT solutions. Creation of the most modern sites, complex highly loaded web services and server solutions, mobile applications and games, design and branding, as well as advertising and promotion.",
+    "og-title": "development of complex IT solutions",
+    "og-description": "Creation of modern sites, complex highly loaded web services and server solutions, mobile applications and games, design and branding, as well as advertising and promotion.",
+    "og-locale": "en"
   }
 }

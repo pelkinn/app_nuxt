@@ -5,7 +5,7 @@
         <div class="caption-wrapper default-margin-bottom">
           <div class="g-caption-block">
             <div class="wrapper-baseline">
-              <h2 class="g-caption">Кейсы</h2>
+              <h2 class="g-caption">{{$t('cases')}}</h2>
               <span class="underscore"></span>
             </div>
           </div>
@@ -24,7 +24,7 @@
               <div class="slide-wrapper">
                 <div class="col col-3">
                   <h3 class="caption-slide">DAZZLING</h3>
-                  <p class="desc-case">Создан сайт с личным кабинетом, онлайн кошелек, разработана партнерская программа, монета DAZZ на базе технологии Quark. Полная разработка и ведение платформы</p>
+                  <p class="desc-case">{{$t('dazz-desc')}}</p>
                   <a class="link-line" href="https://dazzling.life/" target="_blank">
                     <span>dazzling.life</span>
                   </a>
@@ -36,7 +36,7 @@
               <div class="slide-wrapper">
                 <div class="col col-3 cgen">
                   <h3 class="caption-slide">Community generation</h3>
-                  <p class="desc-case">Разработана монета CGEN на базе технологии Quark, листинг монеты на биржах. Проведен SWAP монеты. Разработан сайт, личный кабинет с онлайн кошельком. Полная разработка и ведение платформы</p>
+                  <p class="desc-case">{{$t('cgen-desc')}}</p>
                   <a class="link-line" href="https://cgen.network/" target="_blank">
                     <span>cgen.network</span>
                   </a>
@@ -47,20 +47,20 @@
             <div class="swiper-slide">
               <div class="slide-wrapper">
                 <div class="col col-3 api">
-                  <h3 class="caption-slide">API Решения для ресурсов</h3>
-                  <p class="desc-case">Разработаны API для Федеральной службы судебных приставов, единого федеральный реестра сведений о банкротстве, картотеки арбитражных дел РФ.</p>
+                  <h3 class="caption-slide">{{$t('api-solutions')}}</h3>
+                  <p class="desc-case">{{$t('api-solutions-desc')}}</p>
                   <a class="link-line" href="https://fssprus.ru/" target="_blank">
                     <span>fssprus.ru</span>
                   </a>
                 </div>
-                <img class="img img--api swiper-lazy" :data-src="getImgUrl('api.png')" alt="API Решения для ресурсов">
+                <img class="img img--api swiper-lazy" :data-src="getImgUrl('api.png')" :alt="$t('api-solutions')">
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-wrapper">
                 <div class="col col-3">
                   <h3 class="caption-slide">Crowdsale Network</h3>
-                  <p class="desc-case">Краудфандинг платформа для сбора средств и подбора специалистов. Полная разработка и ведение платформы. Разработана собственная монета CSNP. Листинг монеты на биржах.</p>
+                  <p class="desc-case">{{$t('crowdsale-desc')}}</p>
                   <a class="link-line" href="https://crowdsale.network/" target="_blank">
                     <span>crowdsale.network</span>
                   </a>
@@ -72,7 +72,7 @@
               <div class="slide-wrapper">
                 <div class="col col-3">
                   <h3 class="caption-slide">WHIZ BIZ</h3>
-                  <p class="desc-case">Фонд поддержки и развития современного искусства. Разработка сайта.</p>
+                  <p class="desc-case">{{$t('whiz-biz-desc')}}</p>
                   <a class="link-line" href="http://ghost_town.mrpelktn.beget.tech/" target="_blank">
                     <span>whizbiz.io</span>
                   </a>
@@ -83,8 +83,8 @@
             <div class="swiper-slide">
               <div class="slide-wrapper">
                 <div class="col col-3 air">
-                  <h3 class="caption-slide">Леталки для детей развивающие</h3>
-                  <p class="desc-case">Мобильная 2D-игра, разработанная под iOS. Паззл для детей, оффлайн. Опубликовано в AppStore. Полная разработка.</p>
+                  <h3 class="caption-slide">{{$t('fly-game')}}</h3>
+                  <p class="desc-case">{{$t('fly-game-desc')}}</p>
                   <div class="link-wrapper">
                     <a href="https://itunes.apple.com/ru/app/id1183881507" class="link ios" target="_blank">
                       <svg-apple class="svg"/>
@@ -92,14 +92,14 @@
                     </a>
                   </div>
                 </div>
-                <img class="img img--air swiper-lazy" :data-src="getImgUrl('air.png')" alt="Самолет">
+                <img class="img img--air swiper-lazy" :data-src="getImgUrl('air.png')" alt="Fly">
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-wrapper">
                 <div class="col col-3">
                   <h3 class="caption-slide">FURY RIDE</h3>
-                  <p class="desc-case">Мобильная 3D-игра, разработанная под iOS. Гонки на мотоциклах, сражения, реалистичная физика, более 10км уникальной трассы, умные противники - боты. Оффлайн. Опубликовано в AppStore. Полная разработка.</p>
+                  <p class="desc-case">{{$t('fury-ride-desc')}}</p>
                   <div class="link-wrapper">
                     <a href="https://itunes.apple.com/ru/app/fury-ride/id1281992116" class="link ios" target="_blank">
                       <svg-apple class="svg"/>
@@ -114,7 +114,7 @@
               <div class="slide-wrapper">
                 <div class="col col-3">
                   <h3 class="caption-slide">SNIPER ARENA</h3>
-                  <p class="desc-case">Мобильная 3D-игра в жанре экшн, разработанная под iOS и Android. Программирование поведения персонажей, классов серверной логики и UI. Проектирование классов игрового контента, анимационной FSM. Подготовка\сборка\финализация контента.</p>
+                  <p class="desc-case">{{$t('sniper-arena-desc')}}</p>
                   <div class="link-wrapper">
                     <a href="https://itunes.apple.com/us/app/id1029110855" class="link ios" target="_blank">
                       <svg-apple class="svg"/>
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <main-form :formId="'cases'" :btnText="'Отправить запрос'" :statusMail="statusMail"/>
+              <main-form :formId="'cases'" :btnText="$t('mail-form.send-request')"/>
             </div>
           </div>
         </div>
@@ -155,9 +155,6 @@
       resize: {
         type: Boolean
       },
-      statusMail: {
-        type: Boolean
-      }
     },
     components: {
       SvgArrowSlider,

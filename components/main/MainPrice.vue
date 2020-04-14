@@ -4,23 +4,23 @@
       <div class="container section">
         <div class="caption-wrapper">
           <div class="g-caption-block">
-            <h2 class="visually-hidden">Расчет стоимости проекта</h2>
+            <h2 class="visually-hidden">{{$t('title-price')}}</h2>
             <div class="wrapper-baseline">
-              <p class="g-caption">Рассчитайте</p>
+              <p class="g-caption">{{$t('title-price--1')}}</p>
               <span class="underscore"></span>
             </div>
             <p class="text-wrapper">
-              <span class="small">стоимость вашего проекта</span>
+              <span class="small">{{$t('title-price--2')}}</span>
             </p>
           </div>
         </div>
         <div class="steps-wrapper">
-          <main-form v-if="showResult" :formId="'calc'" :btnText="'Узнать цену'" :statusMail="statusMail" v-on:go-back-step="preventStepsClick"
+          <main-form v-if="showResult" :formId="'calc'" :btnText="$t('mail-form.get-price')" v-on:go-back-step="preventStepsClick"
                       :calcData="{activeSteps: activeSteps, steps: steps, questions: questions, answers: answers}"/>
           <div class="steps" v-if="!showResult">
             <div class="steps-num">
               <span class="arrow" @click="preventStepsClick" v-if="this.activeSteps > 0"></span>
-              <span>Шаг </span>
+              <span>{{$t('step')}} </span>
               <span class="red">{{activeSteps + 1}} из {{steps.length + 1}}</span>
             </div>
             <div class="steps-content">
@@ -34,8 +34,7 @@
                          :class="{check: checkClass(item)}"
                          @click="clickVariant(item, activeQuestion.type)">
                       <div class="content">
-<!--                        <div class="img" :style="{'background-image': 'url(' + require(`~/assets/img/appelsin.png}` ) +')'}"></div>-->
-<!--                        <div class="img" :style="{backgroundImage: 'url(' + require(`~/assets/img/appelsin.png`) + ')'}"></div>-->
+                        <div class="img" :style="{backgroundImage: 'url(' + require(`~/assets/img/icon/steps/${item.img}`) + ')'}"></div>
                         <p class="name-project">{{item.name}}</p>
                       </div>
                     </div>
@@ -48,7 +47,7 @@
                         <svg-arrow-next/>
                       </div>
 
-                      <span>Далее</span>
+                      <span>{{$t('next')}}</span>
                     </div>
 
                   </div>
@@ -70,7 +69,6 @@
 
   export default {
     name: 'price-block',
-    props: ['statusMail'],
     components: {
       SvgArrowNext,
       MainForm
@@ -83,7 +81,7 @@
         questions: [
           {
             id: 1,
-            stepCaption: 'Выберите необходимые вам продукты',
+            stepCaption: this.$t('questions-1.title'),
             type: 'checkbox',
             variant: [
               {
@@ -119,7 +117,7 @@
           },
           {
             id: 2,
-            stepCaption: 'Какие еще продукты вас интересуют',
+            stepCaption: this.$t('questions-2.title'),
             type: 'checkbox',
             variant: [
               {
@@ -153,7 +151,7 @@
           },
           {
             id: 3,
-            stepCaption: 'Уточните продукт категории Сайт / Сервер',
+            stepCaption: this.$t('questions-3.title'),
             type: 'radio',
             variant: [
               {
@@ -188,7 +186,7 @@
           },
           {
             id: 4,
-            stepCaption: 'Какое мобильное приложение вам необходимо',
+            stepCaption: this.$t('questions-4.title'),
             type: 'radio',
             variant: [
               {
@@ -226,7 +224,7 @@
           },
           {
             id: 5,
-            stepCaption: 'На какой платформе нужно приложение / Игра',
+            stepCaption: this.$t('questions-5.title'),
             type: 'checkbox',
             variant: [
               {
@@ -247,7 +245,7 @@
           },
           {
             id: 6,
-            stepCaption: 'На какой платформе нужно приложение / Игра',
+            stepCaption: this.$t('questions-6.title'),
             type: 'checkbox',
             variant: [
               {
@@ -266,7 +264,7 @@
           },
           {
             id: 7,
-            stepCaption: 'Что из рекламы вам потребуется',
+            stepCaption: this.$t('questions-7.title'),
             type: 'checkbox',
             variant: [
               {
@@ -294,7 +292,7 @@
           },
           {
             id: 8,
-            stepCaption: 'Выберите продукт для дизайна',
+            stepCaption: this.$t('questions-8.title'),
             type: 'checkbox',
             variant: [
               {
@@ -334,16 +332,16 @@
       variantsNew() {
         let id = this.activeQuestion.id
         let arr = this.activeQuestion.variant
-        //  arr.forEach(item => {
-        //   item.name = this.$t(`questions-${id}.variant.${item.val}`)
-        // })
+         arr.forEach(item => {
+          item.name = this.$t(`questions-${id}.variant.${item.val}`)
+        })
         return arr
       },
       activeQuestion() {
         let id = this.steps[this.activeSteps]
         return this.questions.filter((i) => {
           if (i.id === id) {
-            // i.stepCaption = this.$t(`questions-${id}.title`)
+            i.stepCaption = this.$t(`questions-${id}.title`)
             return true
           }
         })[0]
